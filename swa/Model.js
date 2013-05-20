@@ -9,7 +9,11 @@ guidedModel =// @startlock
 			{
 				onLoad:function(attributeName)
 				{// @endlock
-					this.email = "*****";
+					try{
+						currentSession().checkPermission('admin');
+					}catch(e){
+						this.email = "*****";
+					}
 				}// @startlock
 			}
 		},
